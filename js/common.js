@@ -309,9 +309,9 @@
 			$('#ims').attr("src", "img/home.png");
 			$('#inv').attr("src","img/invent.png");
 			$('#remb').attr("src","img/remember.png");
-			$('#cln').attr("src","img/click_clander.png");
+			$('#cln').attr("src","img/clnder.png");
 			$('#seting').attr("src", "img/seting.png");	
-			$('#ho_wrk').attr("src", "img/home_work.png");
+			$('#ho_wrk').attr("src", "img/clcik_hmwork.png");
 			$('#aft_login').show();
 			$('#mnday').hide();
 			$('#tusedy').hide();
