@@ -511,12 +511,7 @@
 					for (var key in JSONObject) {
 						if (JSONObject.hasOwnProperty(key)) {
 						//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
-							var ats = '<li><div class="dys_chk"><div class="chk_tm"> '+ JSONObject[key]["task_time"] +' </div><div class="ck_event"> '+ JSONObject[key]["task_name"] +' </div><div class="ck_evnt_tm"> '+ JSONObject[key]["task_description"] +' </div></div></li>';
-							//alert(ats);
-							$('#day_data').append(ats);
-						}
-						else{
-							var ats = '<li><div class="dys_chk"> <div class="nt_fnd"> No day on selected date </div> </div></li>';
+							var ats = '<li><div class="dys_chk"><div class="chk_tm"> '+ JSONObject[key]["task_name"] +' </div><div class="ck_event"> '+ JSONObject[key]["task_name"] +' </div><div class="ck_evnt_tm"> '+ JSONObject[key]["task_description"] +' </div></div></li>';
 							//alert(ats);
 							$('#day_data').append(ats);
 						}
