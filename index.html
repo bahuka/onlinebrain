@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>Login Template</title> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="css/common.css"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/index.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+	<script src="js/common.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+	
+	<!----for-calender-----> 
+    <link rel="stylesheet" type="text/css" href="demo/css/ui.css"/>
+    <link rel="stylesheet" type="text/css" href="dist/css/pignose.calendar.min.css"/>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="dist/js/pignose.calendar.full.min.js"></script>
+	<script type="text/javascript" src="dist/js/codecalender.js"></script>
+	<!--------end---------->
+	<!--timepicker-->
+	<!--script src="js/jquery-ui-timepicker-addon.js"></script-->
+	
+	<script src="js/jquery.timepicker.js"></script>
+	<script src="js/jquery.timepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery.timepicker.min.css"/>
+	
+	<!--end-->
+	<!--datepicker-->
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/ui_style.css">
+	<script src="js/jquery-ui.js"></script>
+
+	<!--------end---------->
+	
+	
+</head> 
+<body>
+    <div class="mn_un_bdy">
+		<div class="header text-center" id="hdr_logo">
+			<img src="img/logo.png" class="img-responsive" >
+		</div>
+		<div class="aftr_login" id="aft_login">
+			<div class="cls_main">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 clo-sm-12 col-xs-12">
+							<div class="bl_sct">
+								<i id="add_pls" class="fa fa-plus-circle" aria-hidden="true"></i>
+							</div>
+							<div class="mg_titl">
+								<h1> MY ONLINE BRAIN </h1>
+							</div>
+							<div class="set_icn seting">
+							   <!--i id="seting" class="fa fa-cog" aria-hidden="true"></i-->
+							   <img id="seting" src="img/seting.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div id="login-signup">
+				<div id="loginbox" class="mainbox col-md-6 col-xs-6 col-md-offset-3 col-sm-8 col-sm-offset-2 loginbox"> 
+					<div class="panel panel-info"> 
+						<div class="panel-heading"> 
+							<div class="panel-title text-center"> Sign In </div> 
+							
+						</div> 
+						<div class="panel-body panel-pad"> 
+							<div id="login-alert" class="alert alert-danger col-sm-12 login-alert"></div> 
+								<form id="loginform" class="form-horizontal" role="form">
+									<div class="input-group margT25"> 
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-user"></i>
+										</span> 
+										<input id="login-email"  pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" type="text" required class="form-control" name="email" value="" placeholder="Email"> 
+									</div> 
+									<div class="input-group margT25"> 
+										<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
+										<input id="login-password" type="password" required class="form-control" name="password" placeholder="Password"> 
+									</div> 
+									<div class="form-group margT10"> 
+										<div class="col-sm-12 controls"> 
+												<!--a id="btn-login" href="#" class="btn btn-block btn-success">Login </a--> 
+										<input type="submit" name="submit" class="btn btn-block btn-success" value="Login">
+											</div> 
+									</div> 
+									<div class="form-group margT10">
+										<div class="col-sm-12 controls"> 
+											<a id="btn-login" href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()" class="btn btn-block btn-success">Register </a> 
+										</div> 
+									</div> 
+								</form> 
+							</div> 
+						</div> 
+					</div> 
+					<div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 signup-box"> 
+					<div class="panel panel-info"> 
+						<div class="panel-heading"> 
+							<div class="panel-title text-center" > Sign Up </div> 
+							
+						</div> 
+						<div class="panel-body"> 
+							<form id="signupform" class="form-horizontal" role="form"> 
+								<div id="signupalert" class="alert alert-danger login-alert"> 
+									<p> Error: </p> 
+									<span></span> 
+								</div> 
+								<div class="input-group margT25"> 
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-user"></i>
+										</span> 
+										<input id="register-email" pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" type="text" required class="form-control" name="email" value="" placeholder="Email"> 
+									</div> 
+									<div class="input-group margT25"> 
+										<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
+										<input id="signup-password" type="password" required class="form-control" name="password" placeholder="Password"> 
+									</div>
+						
+									<div class="input-group margT25"> 
+										<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
+										<input id="signup-confirmpassword" type="password" required class="form-control" name="confirm_password" placeholder="Confirm Password"> 
+									</div>
+								   
+									<div class="form-group"> 
+										<div class="col-md-offset-3 col-md-9"> 
+											<div class="col-sm-12 controls"> 
+													<input type="submit" name="submit" class="btn btn-block btn-success" value="Register">
+												</div> 	
+										</div> 
+									</div> 
+						<div class="form-group"> 
+								 <!-- Button --> 
+									<div class="col-md-offset-3 col-md-9"> 
+										<div class="col-sm-12 controls"> 
+											  <a id="btn-login" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()" class="btn btn-block btn-success">Login </a> 
+										</div> 
+						  </div> 
+						</div> 
+								 </div> 
+								  
+							</form> 
+						</div> 
+					</div>
+			</div> 
+			<div id="dashboard">
+				<div class="on_brain">
+					<div class="container">
+						<div class="row">
+							<div class="form-group first_sc"> 
+								<!-- Button --> 
+								<div class="col-sm-12">
+									<div class="col-sm-6 col-xs-6 controls"> 
+										<div class="mi_set inven_tory">
+											<div class="mi_set_img">
+												<img src="img/invt.png" alt="Inventory" />
+											</div>
+											<div class="mi_set_nme">
+												<p> Inventory </p>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-xs-6 controls">
+										<div class="mi_set cal_endr">
+											<div class="mi_set_img">	
+												<img src="img/calndr.png" alt="Calender" />
+											</div>
+											<div class="mi_set_nme">
+												<p> Calendar </p>
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div> 
+							<div class="form-group sec_sc"> 
+								<div class="col-sm-12">
+									<div class="col-sm-6 col-xs-6 controls"> 
+										<div class="mi_set remi_nder">
+											<div class="mi_set_img">
+												<img src="img/clok.png" alt="Reminders" />
+											</div>
+											<div class="mi_set_nme">
+												<p> Reminders </p>
+											</div>									
+										</div>	
+									</div>
+									<div class="col-sm-6 col-xs-6 controls"> 
+										<div class="mi_set home_work">
+											<div class="mi_set_img">
+												<img src="img/hme.png" alt="Homework" />
+											</div>
+											<div class="mi_set_nme">
+												<p> Homework </p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Add inventory form-->
+			<div class="add_invt">
+				<form id="add_inventory" class="form-horizontal" role="form">
+					<div class="col-sm-12">
+						<div class="col-sm-12 col-xs-12 control_fld">
+							<div class="nme_fld crp_img">
+								<img src="img/crp_img.png">
+							</div>
+						</div>
+						<div class="col-sm-12 col-xs-12 control_fld">
+							<div class="nme_fld fst_st">
+								<input type="text" placeholder="Name of Item" name="item_nme" class="inp_st" id="st_name" required>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xs-6 control_fld">
+							<div class="nme_fld">
+								<input type="button" value="Take Photo" name="tk_pht" class="inp_st pht_tk" id="tk_pic">
+							</div>
+						</div>
+						<div class="col-sm-6 col-xs-6 control_fld">
+							<div class="nme_fld">
+								<input type="button" value="Chose From Library" name="lib_img" class="inp_st pht_tk" id="chs_pic">
+							</div>
+						</div>
+						<div class="col-sm-12 col-xs-12 control_fld">
+							<div class="nme_fld">
+								<input type="text" placeholder="Beacon UUID" name="bcan" class="inp_st" id="int_beon" required>
+							</div>
+						</div>
+						<input type="hidden" name="use_email" id="use_mil" value="">
+						<div class="col-sm-12 col-xs-12 control_fld">
+							<div class="nme_fld">
+								<input type="submit" value="Add" name="submit" class="add_we" >
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- end -->
+			<!-- Add inventory-->
+			<div class="invent" id="ck_invent">
+				<div class="show_invt">
+					<div class="container">
+						<div class="row">
+							<div class="show_invt_first_sc"> 
+								<!-- Button --> 
+								<div class="col-sm-12">
+									<div class="col-sm-12 col-xs-12 controls">
+										<div class="get_apn_invt"> </div>
+										<div id="gt_invt">
+											<input type="text" value="slect_invnt" id="inv_pg">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>	
+			</div>
+			<!-- inventory-->
+			<div class="caln_der" id="ck_calndr">
+				<div class="show_calndr">
+					<div class="container">
+						<div class="row">
+							<div class="clndr_sc"> 
+								<!-- Button --> 
+								<div class="col-sm-12">
+									<div class="col-sm-12 col-xs-12 controls">
+										<div id="st_ep_clndr"> 
+											 <div class="calendar"></div>
+											 <div id="chk_cld_on"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>	
+			</div>
+			<!--end-calender-->
+			
+			<!--days-->
+			<div class="my_daily" id="my_daily">
+				<div class="show_my_daily">
+					<div class="container">
+						<div class="row">
+							<div class="my_daily_sc"> 
+								<!-- Button --> 
+								<div class="col-sm-12">
+									<div class="col-sm-12 col-xs-12 controls">
+										<div class="daily_ast">
+											<div class="titl">
+												<h1> My Daily activites </h1>	
+											</div>
+											<div class="shw_evnt">
+												<div class="chk_ps">
+													<ul id="day_data">
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>	
+			</div>			
+			<!--days-->
+			<!--setting-->
+			<div id="settings">
+				<div class="show_setting">
+					<div class="container">
+						<div class="row">
+							<div class="setting_sc"> 
+								<!-- Button --> 
+								<div class="col-sm-12">
+									<div class="col-sm-12 col-xs-12 controls">
+										<div id="st_ep_setting"> 
+											<div class="as_ts">
+												<div class="col-sm-12 col-xs-12">
+													<div class="nme_fld profiles">
+														<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+													</div>
+													<div class="nme_fld">
+														<input type="button" value="Change Password" name="lib_pswd" class="sting_pht_tk" id="chs_ps_set">
+													</div>
+													<div class="nme_fld">
+														<input type="button" value="Change Picture" name="lib_pict" class="sting_pht_tk" id="chs_pic_st">
+													</div>
+													<div class="nme_fld">
+														<input type="button" value="Logout" name="lib_logt" class="sting_pht_tk" id="chs_logt_sting">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>	
+			</div>
+			<!--end-setting-->
+		</div> 
+		<!-------start-reminder------->
+		<div id="st_remind" class="str_remindr">
+			<div class="show_str_remindr">
+				<div class="container">
+					<div class="row">
+						<div class="str_remindr_sc"> 
+							<!-- Button --> 
+							<div class="col-sm-12">
+								<div class="col-sm-12 col-xs-12">
+									<div id="st_ep_str_remindr"> 
+										<div id="mndy" class="ast_wek">
+											<img class="wek_img" src="img/monday.png">
+										</div>
+										<div id="tusdy" class="ast_wek">
+											<img class="wek_img" src="img/tuesday.png">
+										</div>
+										<div id="wednsdsy" class="ast_wek">
+											<img class="wek_img" src="img/wednesday.png">
+										</div> 
+										<div id="thrsdy" class="ast_wek">
+											<img class="wek_img" src="img/thursday.png">
+										</div>
+										<div id="fridy" class="ast_wek">
+											<img class="wek_img" src="img/friday.png">
+										</div>
+										<div id="saturdy" class="ast_wek">
+											<img class="wek_img" src="img/saturday.png">
+										</div>
+										<div id="sndy" class="ast_wek">
+											<img class="wek_img" src="img/sunday.png">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>	
+		</div>
+		<div id="task_clndr">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 clo-sm-12 col-xs-12">
+						<div class="titl">
+							<h1> New Task </h1>	
+						</div>
+						<div class="dt_form">
+							<form id="task_sv" class="form-horizontal" role="form">
+								<div class="col-sm-12 col-xs-12">
+									<div class="tsks">
+										<input type="text" placeholder="Task Name" name="task_name" id="tsk_nm" required>
+									</div>
+									<div class="tsks">
+										<textarea rows="7" cols="50" name="des_cription" placeholder="Description" id="acd_desc" required> </textarea>
+									</div>
+									<div class="tsks_dt">
+										<input type="text" id="datepicker" placeholder="Due Date" required>
+									</div>
+									<div class="tsks_dt">
+										<input type="text" id="timepiker" placeholder="Time" required>
+									</div>
+									<div id="date_mts"> </div>
+									<div id="tim_mts"> </div>
+								</div>
+								<div class="col-sm-6 col-xs-6 task_stng">
+									<div class="save_act">
+										<input type="submit" value="Save" name="save_task" class="save_task">
+									</div>	  
+								</div>
+								<div class="col-sm-6 col-xs-6 task_stng">
+									<div class="save_act">
+										<input type="button" value="Delete" name="delete_task" class="delete_task">
+										<input type="hidden" name="use_email" id="use_mil" value="">
+									</div>	
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+		<div id="all_tsk_shw">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 clo-sm-12 col-xs-12">
+						<div class="al_task_sh">
+							<div class="wekly_wrk">
+								<div class="shw_tle">
+									<span> Compereshension </sapn>
+								</div>
+								<div class="chk_dy">
+									<span> Monday </span>
+									<input type="radio" name="weekly_pack" value="monday">
+								</div>
+							</div>
+							<div class="wekly_wrk">
+								<div class="shw_tle">
+									<span> Maths Online </sapn>
+								</div>
+								<div class="chk_dy">
+									<span> Monday </span>
+									<input type="radio" name="weekly_pack" value="monday">
+								</div>
+							</div>
+							<div class="wekly_wrk">
+								<div class="shw_tle">
+									<span> History </sapn>
+								</div>
+								<div class="chk_dy">
+									<span> Wednesday </span>
+									<input type="radio" name="weekly_pack" value="wednesday">
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>		
+		</div>
+		<!--reminder-week-form-->
+		<div id="wek_form">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 clo-sm-12 col-xs-12">
+						<div class="back_qust">
+							<div class="sc_qust">
+								<div class="mrg_st">
+									<form id="mnday">
+										<div class="abt_chk">
+											<input type="radio" name="pack" value="pack_swimmer_for_UQ" class="chk_radio"><span class="ck_spn"> Pack swimmer for UQ </span>
+										</div>
+										<div class="abt_chk">
+											<input type="radio" name="pack" value="pack_violin" class="chk_radio"> <span class="ck_spn"> Pack Violin </span>
+										</div>
+										<div class="abt_chk">
+											<input type="radio" name="pack" value="pack_homework" class="chk_radio"><span class="ck_spn">Pack Homework</span>
+										</div>
+										<div class="abt_chk">	
+											<input type="radio" name="pack" value="ask_teacher_about_exam" class="chk_radio"><span class="ck_spn">Ask teacher about exam</span>
+										</div>
+									</form>
+									<form id="tusedy">
+										<div class="abt_chk">
+											<input type="radio" name="pack" value="pack_school_swimmers" class="chk_radio"><span class="ck_spn"> Pack School swimmers </span>
+										</div>										
+									</form>
+								</div>	
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+		<!--end--->
+		<!--hme-wrk-->
+		<div class="hme_wrk">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 clo-sm-12 col-xs-12">
+						<p class="sl_dy"> Select a day to see what homework is due. </p>
+						<div class="hme_min_st">
+							<div class="col-sm-6 col-xs-6">
+								<div class="wek_fst" id="mnday">
+									<p> Monday </p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-6">
+								<div class="wek_fst" id="tusedy">
+									<p> Tuesday </p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-6">
+								<div class="wek_fst" id="wednsdy">
+									<p> wednesday </p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-6">
+								<div class="wek_fst" id="thsdy">
+									<p> Thursday </p>
+								</div>
+							</div>
+							<div class="col-sm-12 col-xs-12">
+								<div class="wek_fst" id="frdy">
+									<p> Friday </p>
+								</div>
+							</div>
+						</div>
+						<div class="hme_min_stv">
+							<div class="col-sm-6 col-xs-6">
+								<div class="ad_tsk" id="add_tk">
+									<div class="tsk_st_ad"> Add task </div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-6">
+								<div class="vi_al_tsk" id="viw_tsk">
+									<div class="tsk_st_ad"> View all task </div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-xs-12">
+								<div class="upld_work" id="upld_wrkshet">
+									<p> Upload worksheets </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end-home_work-->
+		
+		<!--footer-->
+		<div class="footer_nav">
+			<div class="container">
+				<div class="col-sm-12 col-xs-12 footer">
+				   <div class="bottom_nav">
+						<ul> 
+							<li id="home_st" class="home_st"> 
+								<div class="ico_nsd"> 
+									<div class="ic_sorc" id="hom_es"> <img id="ims" src="img/clcik_home.png"> </div> 
+									<div class="menu_nme"> Home  </div> 
+								</div> 
+							</li>
+							<li id="inven_tory" class="inven_tory"> 
+								<div class="ico_nsd"> 
+									<div class="ic_sorc"> <img id="inv" src="img/invent.png"> </div> 
+									<div class="menu_nme"> Inventory  </div> 
+								</div> 
+							</li>
+							<li id="cal_endr" class="cal_endr"> 
+								<div class="ico_nsd"> 
+									<div class="ic_sorc">  <img id="cln" src="img/clnder.png">  </div> 
+									<div class="menu_nme"> Calender  </div> 
+								</div> 
+							</li>
+							<li id="remi_nder" class="remi_nder"> 
+								<div class="ico_nsd"> 
+									<div class="ic_sorc"> <img id="remb" src="img/remember.png"> </div> 
+									<div class="menu_nme"> Reminders  </div> 
+								</div> 
+							</li>
+							<li id="home_work" class="home_work"> 
+								<div class="ico_nsd"> 
+									<div class="ic_sorc" id=""><img id="ho_wrk" src="img/home_work.png"> </div>
+									<div class="menu_nme"> Homework  </div> 
+								</div> 
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body> 
+</html>
