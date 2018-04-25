@@ -309,9 +309,9 @@
 			$('#ims').attr("src", "img/home.png");
 			$('#inv').attr("src","img/invent.png");
 			$('#remb').attr("src","img/remember.png");
-			$('#cln').attr("src","img/clnder.png");
+			$('#cln').attr("src","img/click_clander.png");
 			$('#seting').attr("src", "img/seting.png");	
-			$('#ho_wrk').attr("src", "img/clcik_hmwork.png");
+			//$('#ho_wrk').attr("src", "img/home_work.png");
 			$('#aft_login').show();
 			$('#mnday').hide();
 			$('#tusedy').hide();
@@ -515,6 +515,7 @@
 							//alert(ats);
 							$('#day_data').append(ats);
 						}
+						
 					}	
 					$("#my_daily").show();
 					$('.mg_titl h1').html('DAY');
