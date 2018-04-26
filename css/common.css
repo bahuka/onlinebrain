@@ -560,12 +560,14 @@ div#loginbox {
 .abt_chk {
     float: left;
     width: 100%;
+	border: 1px solid red;
 }
 .ck_spn {
     float: left;
-    width: 46%;
+    width: 100%;
     font-size: 18px;
 	border: 1px solid red;
+	background: #AAAAAA;
 }
 /*.ck_spn {
     float: left;

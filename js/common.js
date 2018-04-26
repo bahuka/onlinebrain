@@ -506,7 +506,8 @@
             datatype: 'json',
             success: function(data){ 
               var json = $.parseJSON(data);
-              alert(json.status);
+              //alert(json.status);
+			  alert("Login Successfully!");
               if(json.status == 1)
               {
                 $('#login-signup').hide(); 
