@@ -240,7 +240,7 @@
 		$('#tusedy').hide();
 		$('.hme_wrk').hide();
 		$('#all_tsk_shw').hide();
-		$('#task_clndr').hide();
+		$('#task_clndr').hide(); 
 		$("#my_daily").hide();
 		
 		var us_eml = user_email;
