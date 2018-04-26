@@ -253,13 +253,13 @@
 				datatype: 'json',
 				success: function(data){ 
 					var JSONObject = JSON.parse(data);
-					$('.get_apn_invt').html('');
+					$('.abt_chk').html('');
 					for (var key in JSONObject) {
 						if (JSONObject.hasOwnProperty(key)) {
 						//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
 							var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
 							//alert(ats);
-							$('.get_apn_invt').append(ats);
+							$('.abt_chk').append(ats);
 						}
 					}	
 				}			  
