@@ -245,7 +245,7 @@
 		
 		var us_eml = user_email;
 		
-		$.ajax({
+		/*$.ajax({
 				type: "POST",
 				url: "http://myonlinebrain.com.au/api.php",
 				data: {mndy: md, eml: us_eml, func:'slect_day'},
@@ -263,7 +263,7 @@
 						}
 					}	
 				}			  
-			});
+			});*/
 		
 	});
 	$('i.fa.fa-plus-circle.mndys').click(function (){
