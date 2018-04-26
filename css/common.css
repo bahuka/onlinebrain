@@ -561,13 +561,13 @@ div#loginbox {
     float: left;
     width: 100%;
 }
-span.ck_spn {
+.ck_spn {
     float: left;
     width: 46%;
     font-size: 18px;
 	border: 1px solid red;
 }
-span.ck_spn {
+.ck_spn {
     float: left;
     width: 70%;
     font-size: 18px;
