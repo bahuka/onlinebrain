@@ -254,7 +254,6 @@
 	$('#add_reminder').submit(function(e){
 		e.preventDefault();
 		var us_em = user_email;
-		alert(us_em);
 		var nm_rm = $("#rm_nm").val();
 		var st_nbr = $('.str_rmndr').val();
 		$.ajax({
@@ -265,10 +264,9 @@
 			datatype: 'json',
 			success: function(data){ 
 			  var json = $.parseJSON(data);
-			  alert(data);
-			  alert("Inventory Add Successfully"); 
-			  /*$('#ck_invent').show();
-			  $('.add_invt').hide();*/
+			  alert("Add Successfully"); 
+				$("#st_remind").show();
+				$("#add_remindr").hide();
 			},
 			error: function (data) {
 				 alert(data);
