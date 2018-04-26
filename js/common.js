@@ -13,57 +13,55 @@
 		$('#wek_form').hide();
 		$("#add_remindr").hide();
 		$('#mnday').hide();
-		$('#tusedy').hide();		
-		$('.inven_tory').click( function (){
-		var wdheigth = jQuery(window).height();
-		$('#ck_calndr').hide();
-		$('.add_invt').hide();
-		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "visible"});
-		$('i.fa.fa-plus-circle.mndys').hide();
-		$('#ck_invent').show();
-		$('#dashboard').hide();
-		$('#settings').hide();
-		$('.mg_titl h1').html('My stuff');
-		$('#ims').attr("src", "img/home.png");
-		$('#inv').attr("src","img/click_ivent.png");
-		$('#cln').attr("src","img/clnder.png");
-		$('#remb').attr("src","img/remember.png");
-		$('#seting').attr("src", "img/seting.png");
-		$('#ho_wrk').attr("src", "img/home_work.png");
-		$('#st_remind').hide();
-		$('.hme_wrk').hide();
-	    $('#all_tsk_shw').hide();
-		$('#task_clndr').hide();
-		$("#my_daily").hide();
-		$('.mndys').hide();
+		$('#tusedy').hide();	
 		
-		var slect_invnt = jQuery("#inv_pg").val();
-		var use_email = jQuery('#use_mil').val();
-		$.ajax({
-			type: "POST",
-			url: "http://myonlinebrain.com.au/api.php",
-			data: {use_email: use_email, func:'slect_invnt'},
-			cache: false,
-			datatype: 'json',
-			success: function(data){ 
-				var JSONObject = JSON.parse(data);
-				$('.get_apn_invt').html('');
-				for (var key in JSONObject) {
-					if (JSONObject.hasOwnProperty(key)) {
-					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
-						var ats = '<div class="apn_sct"> <div class="invot_img"> <img class="on_inv_image" src=img/'+ JSONObject[key]["image"] +' </div> <div class="invot_nme"> '+ JSONObject[key]["name"] +' </div>  </div>';
-						//alert(ats);
-						$('.get_apn_invt').append(ats);
-					}
-				}	
-
-			 // alert(json.array_results); 
-			 // $('#gt_invt').append('array_results');
-			}			  
-		});
+		$('.inven_tory').click( function (){
+			var wdheigth = jQuery(window).height();
+			$('#ck_calndr').hide();
+			$('.add_invt').hide();
+			$('i.fa.fa-plus-circle.add_pls').css({"visibility": "visible"});
+			$('i.fa.fa-plus-circle.mndys').hide();
+			$('#ck_invent').show();
+			$('#dashboard').hide();
+			$('#settings').hide();
+			$('.mg_titl h1').html('My stuff');
+			$('#ims').attr("src", "img/home.png");
+			$('#inv').attr("src","img/click_ivent.png");
+			$('#cln').attr("src","img/clnder.png");
+			$('#remb').attr("src","img/remember.png");
+			$('#seting').attr("src", "img/seting.png");
+			$('#ho_wrk').attr("src", "img/home_work.png");
+			$('#st_remind').hide();
+			$('.hme_wrk').hide();
+			$('#all_tsk_shw').hide();
+			$('#task_clndr').hide();
+			$("#my_daily").hide();
+			$('.mndys').hide();
 			
-			
-	});	
+			var slect_invnt = jQuery("#inv_pg").val();
+			var use_email = jQuery('#use_mil').val();
+			$.ajax({
+				type: "POST",
+				url: "http://myonlinebrain.com.au/api.php",
+				data: {use_email: use_email, func:'slect_invnt'},
+				cache: false,
+				datatype: 'json',
+				success: function(data){ 
+					var JSONObject = JSON.parse(data);
+					$('.get_apn_invt').html('');
+					for (var key in JSONObject) {
+						if (JSONObject.hasOwnProperty(key)) {
+						//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
+							var ats = '<div class="apn_sct"> <div class="invot_img"> <img class="on_inv_image" src=img/'+ JSONObject[key]["image"] +' </div> <div class="invot_nme"> '+ JSONObject[key]["name"] +' </div>  </div>';
+							//alert(ats);
+							$('.get_apn_invt').append(ats);
+						}
+					}	
+				}			  
+			});
+				
+				
+		});	
 	
 	$('.add_pls').click(function(){
 		$('.add_invt').show();
@@ -244,6 +242,29 @@
 		$('#all_tsk_shw').hide();
 		$('#task_clndr').hide();
 		$("#my_daily").hide();
+		
+		var us_eml = user_email;
+		
+		$.ajax({
+				type: "POST",
+				url: "http://myonlinebrain.com.au/api.php",
+				data: {mndy: md, eml: us_eml, func:'slect_day'},
+				cache: false,
+				datatype: 'json',
+				success: function(data){ 
+					var JSONObject = JSON.parse(data);
+					$('.get_apn_invt').html('');
+					for (var key in JSONObject) {
+						if (JSONObject.hasOwnProperty(key)) {
+						//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
+							var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
+							//alert(ats);
+							$('.get_apn_invt').append(ats);
+						}
+					}	
+				}			  
+			});
+		
 	});
 	$('i.fa.fa-plus-circle.mndys').click(function (){
 		$("#wek_form").hide();
