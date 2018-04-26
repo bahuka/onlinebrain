@@ -567,7 +567,7 @@ div#loginbox {
     font-size: 18px;
 	border: 1px solid red;
 }
-.ck_spn {
+/*.ck_spn {
     float: left;
     width: 70%;
     font-size: 18px;
@@ -578,10 +578,10 @@ div#loginbox {
     border-radius: 5px;
 	margin-right: 5%;
 	border: 1px solid green;
-}
-input.chk_radio {
+}*/
+/*input.chk_radio {
     margin-top: 15px !important;
-}
+}*/
 .mrg_st{
 	width: 80%;
 	margin: auto;
