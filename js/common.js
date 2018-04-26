@@ -11,13 +11,15 @@
 		$('#hdr_logo').hide();
 		$('#aft_login').show();
 		$('#wek_form').hide();
+		$("#add_remindr").hide();
 		$('#mnday').hide();
 		$('#tusedy').hide();		
-	$('.inven_tory').click( function (){
+		$('.inven_tory').click( function (){
 		var wdheigth = jQuery(window).height();
 		$('#ck_calndr').hide();
 		$('.add_invt').hide();
-		$('#add_pls').css({"visibility": "visible"});
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "visible"});
+		$('i.fa.fa-plus-circle.mndys').hide();
 		$('#ck_invent').show();
 		$('#dashboard').hide();
 		$('#settings').hide();
@@ -29,11 +31,12 @@
 		$('#seting').attr("src", "img/seting.png");
 		$('#ho_wrk').attr("src", "img/home_work.png");
 		$('#st_remind').hide();
-		$('#wek_form').hide();
 		$('.hme_wrk').hide();
 	    $('#all_tsk_shw').hide();
 		$('#task_clndr').hide();
 		$("#my_daily").hide();
+		$('.mndys').hide();
+		
 		var slect_invnt = jQuery("#inv_pg").val();
 		var use_email = jQuery('#use_mil').val();
 		$.ajax({
@@ -62,7 +65,7 @@
 			
 	});	
 	
-	$('#add_pls').click(function(){
+	$('.add_pls').click(function(){
 		$('.add_invt').show();
 		$('#ck_invent').hide();
 		$('.mg_titl h1').html('Add');
@@ -70,6 +73,7 @@
 		$('#settings').hide();
 		$('#st_remind').hide();
 		$('#wek_form').hide();
+		$("#add_remindr").hide();
 		$('#inv').attr("src","img/invent.png");
 		$('#mnday').hide();
 		$('#tusedy').hide();
@@ -95,10 +99,12 @@
 		$('#aft_login').show();
 		$('#settings').hide();
 		$('#st_remind').hide();
-		$('#add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.mndys').hide();
 		$('.mg_titl h1').html('My online brain  ');
 		$('#ck_calndr').hide();
 		$('#wek_form').hide();
+		$("#add_remindr").hide();
 		$('#mnday').hide();
 		$('#tusedy').hide();
 		$('.hme_wrk').hide();
@@ -125,9 +131,11 @@
 		$('#dashboard').hide();
 		$('#settings').hide();
 		$('#st_remind').hide();
-		$('#add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.mndys').hide();
 		$('.mg_titl h1').html('Calendar');
 		$('#wek_form').hide();
+		$("#add_remindr").hide();
 		$('#mnday').hide();
 		$('#tusedy').hide();
 		$('.hme_wrk').hide();
@@ -153,10 +161,12 @@
 		$('#aft_login').show();
 		$('#dashboard').hide();
 		$('#settings').hide();
-		$('#add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.mndys').hide();
 		$('.mg_titl h1').html('Reminders');
 		$('#st_remind').show();
 		$('#wek_form').hide();
+		$("#add_remindr").hide();
 		$('#mnday').hide();
 		$('#tusedy').hide();
 		$('.hme_wrk').hide();
@@ -181,11 +191,13 @@
 		$('#ck_invent').hide();
 		$('#aft_login').show();
 		$('#dashboard').hide();
-		$('#add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.mndys').hide();
 		$('.mg_titl h1').html('Settings');
 		$('#st_remind').hide();
 		$('#settings').show();
 		$('#wek_form').hide();
+		$("#add_remindr").hide();
 		$('#mnday').hide();
 		$('#tusedy').hide();
 		$('.hme_wrk').hide();
@@ -196,6 +208,7 @@
 	
 	$('#mndy').click(function (){
 		$('#wek_form').show();	
+		$("#add_remindr").hide();
 		$('#ck_calndr').hide();
 		$('#login-signup').hide(); 
 		$('#dashboard').hide(); 
@@ -205,18 +218,24 @@
 		$('#ck_invent').hide();
 		$('#aft_login').hide();
 		$('#dashboard').hide();
-		$('#add_pls').css({"visibility": "hidden"});
 		$('.mg_titl h1').html('Settings');
 		$('#st_remind').hide();
 		$('#settings').hide();
-		
 		$('#ims').attr("src", "img/home.png");
 		$('#inv').attr("src","img/invent.png");
 		$('#cln').attr("src","img/clnder.png");
 		$('#remb').attr("src","img/click_rember.png");
 		$('#seting').attr("src", "img/seting.png");
 		$('#ho_wrk').attr("src", "img/home_work.png");
-		$('#add_pls').css({"visibility": "hidden"});
+		
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		//$('.mndys').css({"display": "block !important"});
+		$('i.fa.fa-plus-circle.mndys').show();
+		var md = $("#monday").val();
+		$("#wek_vle").html('<input type="hidden" class="st_rmndr" value="'+md+'">');
+		var srt = $(".st_rmndr").val();
+		$("#week_s").html('<input type="hidden" class="str_rmndr" value="'+srt+'">');
+		
 		$('.mg_titl h1').html('Reminders');
 		$('#aft_login').show();
 		$('#mnday').show();
@@ -226,8 +245,42 @@
 		$('#task_clndr').hide();
 		$("#my_daily").hide();
 	});
+	$('i.fa.fa-plus-circle.mndys').click(function (){
+		$("#wek_form").hide();
+		$("#add_remindr").show();
+		var st = $(".str_rmndr").val();
+	});
+	
+	$('#add_reminder').submit(function(e){
+		e.preventDefault();
+		var us_em = user_email;
+		alert(us_em);
+		var nm_rm = $("#rm_nm").val();
+		var st_nbr = $('.str_rmndr').val();
+		$.ajax({
+			type: "POST",
+			url: "http://myonlinebrain.com.au/api.php",
+			data: {evt_name: nm_rm,day_name : st_nbr, us_reml: us_em, func:'reminder'},
+			cache: false,
+			datatype: 'json',
+			success: function(data){ 
+			  var json = $.parseJSON(data);
+			  alert(data);
+			  alert("Inventory Add Successfully"); 
+			  /*$('#ck_invent').show();
+			  $('.add_invt').hide();*/
+			},
+			error: function (data) {
+				 alert(data);
+				alert("Failure");
+			} 
+		  
+		});
+	});
+	
 	$('#tusdy').click(function (){
 		$('#wek_form').show();	
+		$("#add_remindr").hide();
 		$('#ck_calndr').hide();
 		$('#login-signup').hide(); 
 		$('#dashboard').hide(); 
@@ -237,7 +290,8 @@
 		$('#ck_invent').hide();
 		$('#aft_login').hide();
 		$('#dashboard').hide();
-		$('#add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.mndys').show();
 		$('.mg_titl h1').html('Settings');
 		$('#st_remind').hide();
 		$('#settings').hide();
@@ -248,7 +302,6 @@
 		$('#remb').attr("src","img/click_rember.png");
 		$('#seting').attr("src", "img/seting.png");
 		$('#ho_wrk').attr("src", "img/home_work.png");
-		$('#add_pls').css({"visibility": "hidden"});
 		$('.mg_titl h1').html('Reminders');
 		$('#aft_login').show();
 		$('#mnday').hide();
@@ -257,11 +310,10 @@
 		$('#all_tsk_shw').hide();
 		$('#task_clndr').hide();
 		$("#my_daily").hide();
+		
 	});
 	
-	/*$('.home_work').click(function(){
-		$('#ck_calndr').hide();
-	});*/
+
 	
 	 /**************Add inventory**************/		
 		 $("#add_inventory").submit(function(e){
@@ -296,20 +348,22 @@
 		/**********add task**************/
 		$('#add_tk').click(function (){
 			$('#wek_form').hide();	
+			$("#add_remindr").hide();
 			$('#ck_calndr').hide();
 			$('#login-signup').hide(); 
 			$('#dashboard').hide(); 
 			$('#hdr_logo').hide();
 			$('.add_invt').hide();
 			$('#ck_invent').hide();
-			$('#add_pls').css({"visibility": "hidden"});
+			$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+			$('i.fa.fa-plus-circle.mndys').hide();
 			$('.mg_titl h1').html('Homework tasks');
 			$('#st_remind').hide();
 			$('#settings').hide();
 			$('#ims').attr("src", "img/home.png");
 			$('#inv').attr("src","img/invent.png");
 			$('#remb').attr("src","img/remember.png");
-			$('#cln').attr("src","img/click_clander.png");
+			$('#cln').attr("src","img/clnder.png");
 			$('#seting').attr("src", "img/seting.png");	
 			//$('#ho_wrk').attr("src", "img/home_work.png");
 			$('#aft_login').show();
@@ -325,14 +379,16 @@
 		
 		/*********home-work************/
 		$('#home_work').click(function (){
-			$('#wek_form').hide();	
+			$('#wek_form').hide();
+			$("#add_remindr").hide();			
 			$('#ck_calndr').hide();
 			$('#login-signup').hide(); 
 			$('#dashboard').hide(); 
 			$('#hdr_logo').hide();
 			$('.add_invt').hide();
 			$('#ck_invent').hide();
-			$('#add_pls').css({"visibility": "hidden"});
+			$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+			$('i.fa.fa-plus-circle.mndys').hide();
 			$('.mg_titl h1').html('Homework');
 			$('#st_remind').hide();
 			$('#settings').hide();
@@ -354,14 +410,16 @@
 		
 		/*******view_all***********/
 		$('#viw_tsk').click(function (){
-			$('#wek_form').hide();	
+			$('#wek_form').hide();
+			$("#add_remindr").hide();			
 			$('#ck_calndr').hide();
 			$('#login-signup').hide(); 
 			$('#dashboard').hide(); 
 			$('#hdr_logo').hide();
 			$('.add_invt').hide();
 			$('#ck_invent').hide();
-			$('#add_pls').css({"visibility": "hidden"});
+			$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+			$('i.fa.fa-plus-circle.mndys').hide();
 			$('.mg_titl h1').html('All homework tasks');
 			$('#st_remind').hide();
 			$('#settings').hide();
@@ -510,8 +568,8 @@
 					$('#day_data').html('');
 					for (var key in JSONObject) {
 						if (JSONObject.hasOwnProperty(key)) {
-						//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
-							var ats = '<li><div class="dys_chk"><div class="chk_tm"> '+ JSONObject[key]["task_name"] +' </div><div class="ck_event"> '+ JSONObject[key]["task_name"] +' </div><div class="ck_evnt_tm"> '+ JSONObject[key]["task_description"] +' </div></div></li>';
+							//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
+								var ats = '<li><div class="dys_chk"><div class="chk_tm"> '+ JSONObject[key]["task_time"] +' </div><div class="ck_event"> '+ JSONObject[key]["task_name"] +' </div><div class="ck_evnt_tm"> '+ JSONObject[key]["task_description"] +' </div></div></li>';
 							//alert(ats);
 							$('#day_data').append(ats);
 						}

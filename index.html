@@ -46,7 +46,8 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 clo-sm-12 col-xs-12">
 							<div class="bl_sct">
-								<i id="add_pls" class="fa fa-plus-circle" aria-hidden="true"></i>
+								<i class="fa fa-plus-circle add_pls" aria-hidden="true"></i>
+								<i class="fa fa-plus-circle mndys" aria-hidden="true"></i>
 							</div>
 							<div class="mg_titl">
 								<h1> MY ONLINE BRAIN </h1>
@@ -359,24 +360,31 @@
 									<div id="st_ep_str_remindr"> 
 										<div id="mndy" class="ast_wek">
 											<img class="wek_img" src="img/monday.png">
+											<input type="hidden" id="monday" value="Monday"> 
 										</div>
 										<div id="tusdy" class="ast_wek">
 											<img class="wek_img" src="img/tuesday.png">
+											<input type="hidden" id="tuseday" value="Tuseday">
 										</div>
 										<div id="wednsdsy" class="ast_wek">
 											<img class="wek_img" src="img/wednesday.png">
+											<input type="hidden" id="wednesday" value="Wednesday">
 										</div> 
 										<div id="thrsdy" class="ast_wek">
 											<img class="wek_img" src="img/thursday.png">
+											<input type="hidden" id="thursday" value="Thursday">
 										</div>
 										<div id="fridy" class="ast_wek">
 											<img class="wek_img" src="img/friday.png">
+											<input type="hidden" id="friday" value="Friday">
 										</div>
 										<div id="saturdy" class="ast_wek">
 											<img class="wek_img" src="img/saturday.png">
+											<input type="hidden" id="saturday" value="Saturday">
 										</div>
 										<div id="sndy" class="ast_wek">
 											<img class="wek_img" src="img/sunday.png">
+											<input type="hidden" id="sunday" value="Sunday">
 										</div>
 									</div>
 								</div>
@@ -466,6 +474,28 @@
 				</div>
 			</div>		
 		</div>
+		<!--add-->
+		<div class="form_add_rmindr" id="add_remindr">
+			<div class="container">
+					<div class="col-lg-12 col-md-12 clo-sm-12 col-xs-12">
+						<div class="remindr_qust">
+							<form id="add_reminder" class="form-horizontal" role="form">
+								<div class="col-sm-12 col-xs-12">
+									<div class="rmdr">
+										<input type="text" placeholder="Add" name="remindr_name" id="rm_nm" required>
+									</div>
+									<div id="week_s"> </div>									
+								</div>
+								<div class="col-sm-6 col-xs-6 rmd_stng">
+									<div class="save_rmdr">
+										<input type="submit" value="Add" name="add_remndr" class="rmd_task">
+									</div>	  
+								</div>
+							</form>
+						</div>
+					</div>
+			</div>	
+		</div>
 		<!--reminder-week-form-->
 		<div id="wek_form">
 			<div class="container">
@@ -487,6 +517,7 @@
 										<div class="abt_chk">	
 											<input type="radio" name="pack" value="ask_teacher_about_exam" class="chk_radio"><span class="ck_spn">Ask teacher about exam</span>
 										</div>
+										<div id="wek_vle"></div>
 									</form>
 									<form id="tusedy">
 										<div class="abt_chk">

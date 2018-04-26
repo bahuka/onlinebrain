@@ -270,11 +270,22 @@ body
     font-weight: bold;
     font-size: 20px;
 }
-i#add_pls {
+.add_pls{
+  	visibility: hidden;
+}
+i.add_pls {
     color: rgb(252, 203, 26);
     font-size: 35px;
     line-height: 2;
-	visibility: hidden;
+}
+i.fa.fa-plus-circle.mndys {
+    display: none;
+}
+
+i.mndys {
+    color: rgb(252, 203, 26);
+    font-size: 35px;
+    line-height: 2;
 }
 #ck_invent{
 	width: 100%;
@@ -486,6 +497,17 @@ div#loginbox {
     width: 100%;
     margin: 0;
 }
+/********sign up************/
+.form-group.margT10 {
+    margin-right: 0;
+    margin-left: 0;
+}
+.margT10 .col-sm-12.controls {
+    width: 100%;
+    float: left;
+    padding: 0;
+}
+/***********************************/
 /***********reminder***********/
 #st_remind{
 	width: 100%;
@@ -775,6 +797,10 @@ div#my_daily {
 .daily_ast .titl h1 {
     text-transform: uppercase;
 	font-size: 18px;
+}
+/*********add-tsak********/
+.form_add_rmindr{
+	display: none;
 }
 
 
