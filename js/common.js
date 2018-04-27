@@ -37,7 +37,7 @@
 			$('#task_clndr').hide();
 			$("#my_daily").hide();
 			$('.mndys').hide();
-			
+			$('#wek_form').hide();
 			var slect_invnt = jQuery("#inv_pg").val();
 			var use_email = jQuery('#use_mil').val();
 			$.ajax({
@@ -79,6 +79,7 @@
 		$('#all_tsk_shw').hide();
 		$('#task_clndr').hide();
 		$("#my_daily").hide();
+		
 	});
 	
 	$('#home_st').click(function(){
@@ -245,25 +246,25 @@
 		
 		var us_eml = user_email;
 		
-		/*$.ajax({
-				type: "POST",
-				url: "http://myonlinebrain.com.au/api.php",
-				data: {mndy: md, eml: us_eml, func:'slect_day'},
-				cache: false,
-				datatype: 'json',
-				success: function(data){ 
-					var JSONObject = JSON.parse(data);
-					$('.abt_chk').html('');
-					for (var key in JSONObject) {
-						if (JSONObject.hasOwnProperty(key)) {
-						//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
-							var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
-							//alert(ats);
-							$('.abt_chk').append(ats);
-						}
-					}	
-				}			  
-			});*/
+		$.ajax({
+			type: "POST",
+			url: "http://myonlinebrain.com.au/api.php",
+			data: {mndy: md, eml: us_eml, func:'slect_day'},
+			cache: false,
+			datatype: 'json',
+			success: function(data){ 
+				var JSONObject = JSON.parse(data);
+				$('.abt_chk').html('');
+				for (var key in JSONObject) {
+					if (JSONObject.hasOwnProperty(key)) {
+					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
+						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div> <input type="radio" >  ';
+						//alert(ats);
+						$('.abt_chk').append(ats);
+					}
+				}	
+			}			  
+		});
 		
 	});
 	$('i.fa.fa-plus-circle.mndys').click(function (){
@@ -288,9 +289,10 @@
 			  alert("Add Successfully"); 
 				$("#st_remind").show();
 				$("#add_remindr").hide();
+				$("#rm_nm").val("");
 			},
 			error: function (data) {
-				 alert(data);
+				// alert(data);
 				alert("Failure");
 			} 
 		  
@@ -309,8 +311,16 @@
 		$('#ck_invent').hide();
 		$('#aft_login').hide();
 		$('#dashboard').hide();
+		
 		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
 		$('i.fa.fa-plus-circle.mndys').show();
+		
+		var md = $("#tuseday").val();
+		//alert(md);
+		$("#wek_vle").html('<input type="hidden" class="st_rmndr" value="'+md+'">');
+		var srt = $(".st_rmndr").val();
+		$("#week_s").html('<input type="hidden" class="str_rmndr" value="'+srt+'">');
+		
 		$('.mg_titl h1').html('Settings');
 		$('#st_remind').hide();
 		$('#settings').hide();
@@ -323,19 +333,366 @@
 		$('#ho_wrk').attr("src", "img/home_work.png");
 		$('.mg_titl h1').html('Reminders');
 		$('#aft_login').show();
-		$('#mnday').hide();
-		$('#tusedy').show();
+		//$('#mnday').hide();
+		//$('#tusedy').show();
 		$('.hme_wrk').hide();
 		$('#all_tsk_shw').hide();
 		$('#task_clndr').hide();
 		$("#my_daily").hide();
 		
+		$('#mnday').show();
+		var us_eml = user_email;
+		$.ajax({
+			type: "POST",
+			url: "http://myonlinebrain.com.au/api.php",
+			data: {mndy: md, eml: us_eml, func:'slect_day'},
+			cache: false,
+			datatype: 'json',
+			success: function(data){ 
+				var JSONObject = JSON.parse(data);
+				$('.abt_chk').html('');
+				for (var key in JSONObject) {
+					if (JSONObject.hasOwnProperty(key)) {
+					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
+						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
+						//alert(ats);
+						$('.abt_chk').append(ats);
+					}
+				}	
+			}			  
+		});
+			
 	});
 	
+	$('#wednsdsy').click(function (){
+		$('#wek_form').show();	
+		$("#add_remindr").hide();
+		$('#ck_calndr').hide();
+		$('#login-signup').hide(); 
+		$('#dashboard').hide(); 
+		$('#hdr_logo').hide();
+		$('#aft_login').hide();
+		$('.add_invt').hide();
+		$('#ck_invent').hide();
+		$('#aft_login').hide();
+		$('#dashboard').hide();
+		
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.mndys').show();
+		
+		var md = $("#wednesdys").val();
+		//alert(md);
+		$("#wek_vle").html('<input type="hidden" class="st_rmndr" value="'+md+'">');
+		var srt = $(".st_rmndr").val();
+		$("#week_s").html('<input type="hidden" class="str_rmndr" value="'+srt+'">');
+		
+		$('.mg_titl h1').html('Settings');
+		$('#st_remind').hide();
+		$('#settings').hide();
+		
+		$('#ims').attr("src", "img/home.png");
+		$('#inv').attr("src","img/invent.png");
+		$('#cln').attr("src","img/clnder.png");
+		$('#remb').attr("src","img/click_rember.png");
+		$('#seting').attr("src", "img/seting.png");
+		$('#ho_wrk').attr("src", "img/home_work.png");
+		$('.mg_titl h1').html('Reminders');
+		$('#aft_login').show();
+		//$('#mnday').hide();
+		//$('#tusedy').show();
+		$('.hme_wrk').hide();
+		$('#all_tsk_shw').hide();
+		$('#task_clndr').hide();
+		$("#my_daily").hide();
+		
+		$('#mnday').show();
+		var us_eml = user_email;
+		$.ajax({
+			type: "POST",
+			url: "http://myonlinebrain.com.au/api.php",
+			data: {mndy: md, eml: us_eml, func:'slect_day'},
+			cache: false,
+			datatype: 'json',
+			success: function(data){ 
+				var JSONObject = JSON.parse(data);
+				$('.abt_chk').html('');
+				for (var key in JSONObject) {
+					if (JSONObject.hasOwnProperty(key)) {
+					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
+						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
+						//alert(ats);
+						$('.abt_chk').append(ats);
+					}
+				}	
+			}			  
+		});
+			
+	});
 
+	$('#thrsdy').click(function (){
+		$('#wek_form').show();	
+		$("#add_remindr").hide();
+		$('#ck_calndr').hide();
+		$('#login-signup').hide(); 
+		$('#dashboard').hide(); 
+		$('#hdr_logo').hide();
+		$('#aft_login').hide();
+		$('.add_invt').hide();
+		$('#ck_invent').hide();
+		$('#aft_login').hide();
+		$('#dashboard').hide();
+		
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.mndys').show();
+		
+		var md = $("#thursday").val();
+		//alert(md);
+		$("#wek_vle").html('<input type="hidden" class="st_rmndr" value="'+md+'">');
+		var srt = $(".st_rmndr").val();
+		$("#week_s").html('<input type="hidden" class="str_rmndr" value="'+srt+'">');
+		
+		$('.mg_titl h1').html('Settings');
+		$('#st_remind').hide();
+		$('#settings').hide();
+		
+		$('#ims').attr("src", "img/home.png");
+		$('#inv').attr("src","img/invent.png");
+		$('#cln').attr("src","img/clnder.png");
+		$('#remb').attr("src","img/click_rember.png");
+		$('#seting').attr("src", "img/seting.png");
+		$('#ho_wrk').attr("src", "img/home_work.png");
+		$('.mg_titl h1').html('Reminders');
+		$('#aft_login').show();
+		//$('#mnday').hide();
+		//$('#tusedy').show();
+		$('.hme_wrk').hide();
+		$('#all_tsk_shw').hide();
+		$('#task_clndr').hide();
+		$("#my_daily").hide();
+		
+		$('#mnday').show();
+		var us_eml = user_email;
+		$.ajax({
+			type: "POST",
+			url: "http://myonlinebrain.com.au/api.php",
+			data: {mndy: md, eml: us_eml, func:'slect_day'},
+			cache: false,
+			datatype: 'json',
+			success: function(data){ 
+				var JSONObject = JSON.parse(data);
+				$('.abt_chk').html('');
+				for (var key in JSONObject) {
+					if (JSONObject.hasOwnProperty(key)) {
+					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
+						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
+						//alert(ats);
+						$('.abt_chk').append(ats);
+					}
+				}	
+			}			  
+		});
+			
+	});
+	
+	$('#fridy').click(function (){
+		$('#wek_form').show();	
+		$("#add_remindr").hide();
+		$('#ck_calndr').hide();
+		$('#login-signup').hide(); 
+		$('#dashboard').hide(); 
+		$('#hdr_logo').hide();
+		$('#aft_login').hide();
+		$('.add_invt').hide();
+		$('#ck_invent').hide();
+		$('#aft_login').hide();
+		$('#dashboard').hide();
+		
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.mndys').show();
+		
+		var md = $("#friday").val();
+		//alert(md);
+		$("#wek_vle").html('<input type="hidden" class="st_rmndr" value="'+md+'">');
+		var srt = $(".st_rmndr").val();
+		$("#week_s").html('<input type="hidden" class="str_rmndr" value="'+srt+'">');
+		
+		$('.mg_titl h1').html('Settings');
+		$('#st_remind').hide();
+		$('#settings').hide();
+		
+		$('#ims').attr("src", "img/home.png");
+		$('#inv').attr("src","img/invent.png");
+		$('#cln').attr("src","img/clnder.png");
+		$('#remb').attr("src","img/click_rember.png");
+		$('#seting').attr("src", "img/seting.png");
+		$('#ho_wrk').attr("src", "img/home_work.png");
+		$('.mg_titl h1').html('Reminders');
+		$('#aft_login').show();
+		//$('#mnday').hide();
+		//$('#tusedy').show();
+		$('.hme_wrk').hide();
+		$('#all_tsk_shw').hide();
+		$('#task_clndr').hide();
+		$("#my_daily").hide();
+		
+		$('#mnday').show();
+		var us_eml = user_email;
+		$.ajax({
+			type: "POST",
+			url: "http://myonlinebrain.com.au/api.php",
+			data: {mndy: md, eml: us_eml, func:'slect_day'},
+			cache: false,
+			datatype: 'json',
+			success: function(data){ 
+				var JSONObject = JSON.parse(data);
+				$('.abt_chk').html('');
+				for (var key in JSONObject) {
+					if (JSONObject.hasOwnProperty(key)) {
+					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
+						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
+						//alert(ats);
+						$('.abt_chk').append(ats);
+					}
+				}	
+			}			  
+		});
+			
+	});
+	
+	$('#saturdy').click(function (){
+		$('#wek_form').show();	
+		$("#add_remindr").hide();
+		$('#ck_calndr').hide();
+		$('#login-signup').hide(); 
+		$('#dashboard').hide(); 
+		$('#hdr_logo').hide();
+		$('#aft_login').hide();
+		$('.add_invt').hide();
+		$('#ck_invent').hide();
+		$('#aft_login').hide();
+		$('#dashboard').hide();
+		
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.mndys').show();
+		
+		var md = $("#saturday").val();
+		//alert(md);
+		$("#wek_vle").html('<input type="hidden" class="st_rmndr" value="'+md+'">');
+		var srt = $(".st_rmndr").val();
+		$("#week_s").html('<input type="hidden" class="str_rmndr" value="'+srt+'">');
+		
+		$('.mg_titl h1').html('Settings');
+		$('#st_remind').hide();
+		$('#settings').hide();
+		
+		$('#ims').attr("src", "img/home.png");
+		$('#inv').attr("src","img/invent.png");
+		$('#cln').attr("src","img/clnder.png");
+		$('#remb').attr("src","img/click_rember.png");
+		$('#seting').attr("src", "img/seting.png");
+		$('#ho_wrk').attr("src", "img/home_work.png");
+		$('.mg_titl h1').html('Reminders');
+		$('#aft_login').show();
+		//$('#mnday').hide();
+		//$('#tusedy').show();
+		$('.hme_wrk').hide();
+		$('#all_tsk_shw').hide();
+		$('#task_clndr').hide();
+		$("#my_daily").hide();
+		
+		$('#mnday').show();
+		var us_eml = user_email;
+		$.ajax({
+			type: "POST",
+			url: "http://myonlinebrain.com.au/api.php",
+			data: {mndy: md, eml: us_eml, func:'slect_day'},
+			cache: false,
+			datatype: 'json',
+			success: function(data){ 
+				var JSONObject = JSON.parse(data);
+				$('.abt_chk').html('');
+				for (var key in JSONObject) {
+					if (JSONObject.hasOwnProperty(key)) {
+					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
+						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
+						//alert(ats);
+						$('.abt_chk').append(ats);
+					}
+				}	
+			}			  
+		});
+			
+	});
+	
+	$('#sndy').click(function (){
+
+		$('#wek_form').show();	
+		$("#add_remindr").hide();
+		$('#ck_calndr').hide();
+		$('#login-signup').hide(); 
+		$('#dashboard').hide(); 
+		$('#hdr_logo').hide();
+		$('#aft_login').hide();
+		$('.add_invt').hide();
+		$('#ck_invent').hide();
+		$('#aft_login').hide();
+		$('#dashboard').hide();
+		
+		$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
+		$('i.fa.fa-plus-circle.mndys').show();
+		
+		var md = $("#sunday").val();
+		//alert(md);
+		$("#wek_vle").html('<input type="hidden" class="st_rmndr" value="'+md+'">');
+		var srt = $(".st_rmndr").val();
+		$("#week_s").html('<input type="hidden" class="str_rmndr" value="'+srt+'">');
+		
+		$('.mg_titl h1').html('Settings');
+		$('#st_remind').hide();
+		$('#settings').hide();
+		
+		$('#ims').attr("src", "img/home.png");
+		$('#inv').attr("src","img/invent.png");
+		$('#cln').attr("src","img/clnder.png");
+		$('#remb').attr("src","img/click_rember.png");
+		$('#seting').attr("src", "img/seting.png");
+		$('#ho_wrk').attr("src", "img/home_work.png");
+		$('.mg_titl h1').html('Reminders');
+		$('#aft_login').show();
+		//$('#mnday').hide();
+		//$('#tusedy').show();
+		$('.hme_wrk').hide();
+		$('#all_tsk_shw').hide();
+		$('#task_clndr').hide();
+		$("#my_daily").hide();
+		
+		$('#mnday').show();
+		var us_eml = user_email;
+		$.ajax({
+			type: "POST",
+			url: "http://myonlinebrain.com.au/api.php",
+			data: {mndy: md, eml: us_eml, func:'slect_day'},
+			cache: false,
+			datatype: 'json',
+			success: function(data){ 
+				var JSONObject = JSON.parse(data);
+				$('.abt_chk').html('');
+				for (var key in JSONObject) {
+					if (JSONObject.hasOwnProperty(key)) {
+					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
+						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
+						//alert(ats);
+						$('.abt_chk').append(ats);
+					}
+				}	
+			}			  
+		});
+			
+	});
 	
 	 /**************Add inventory**************/		
 		 $("#add_inventory").submit(function(e){
+			 $("#wek_form").hide();
 			 $("#my_daily").hide();
 			e.preventDefault();
 			var st_name = jQuery("#st_name").val();
@@ -376,6 +733,7 @@
 			$('#ck_invent').hide();
 			$('i.fa.fa-plus-circle.add_pls').css({"visibility": "hidden"});
 			$('i.fa.fa-plus-circle.mndys').hide();
+		
 			$('.mg_titl h1').html('Homework tasks');
 			$('#st_remind').hide();
 			$('#settings').hide();
@@ -556,6 +914,8 @@
             success: function(data){ 
 			//alert(data);
               alert("Save Successfully!");
+			  $('#aft_login').show();
+			  $('.hme_wrk').show();
             },
 			error: function (data) {
 				//alert(data);
@@ -568,7 +928,6 @@
 	
 	
 });  
-
 
 	////on calender date click ////
 	function myFunction(id) {
@@ -592,8 +951,7 @@
 								var ats = '<li><div class="dys_chk"><div class="chk_tm"> '+ JSONObject[key]["task_time"] +' </div><div class="ck_event"> '+ JSONObject[key]["task_name"] +' </div><div class="ck_evnt_tm"> '+ JSONObject[key]["task_description"] +' </div></div></li>';
 							//alert(ats);
 							$('#day_data').append(ats);
-						}
-						
+						}		
 					}	
 					$("#my_daily").show();
 					$('.mg_titl h1').html('DAY');
