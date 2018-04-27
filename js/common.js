@@ -258,7 +258,7 @@
 				for (var key in JSONObject) {
 					if (JSONObject.hasOwnProperty(key)) {
 					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
-						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div> <input type="radio" >  ';
+						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div> <input type="radio" value="'+ JSONObject[key]["reminder_title"] +'" name="mdyform" id="acsr" >  ';
 						//alert(ats);
 						$('.abt_chk').append(ats);
 					}
