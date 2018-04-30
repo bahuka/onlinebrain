@@ -575,6 +575,7 @@ div#loginbox {
     padding: 10px 20px;
     color: #545068;
     border-radius: 5px;
+    float: left;
 }
 .remndr_chk{
     float: left;
