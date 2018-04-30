@@ -842,6 +842,23 @@ input.rmd_task {
 .rmd_stng {
     width: 100%;
 }
+/**************************/
+.edir_rminmdr {
+    position: absolute;
+    bottom: 105px;
+    text-align: right;
+    float: right;
+    right: 170px;
+}
+
+button#ed_it {
+    background: #F7CC1B;
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+}
 
 
 
