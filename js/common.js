@@ -144,6 +144,7 @@
 	});
 	
 	$('.remi_nder').click(function(){
+		alert('hlo');
 		$('#ims').attr("src", "img/home.png");
 		$('#inv').attr("src","img/invent.png");
 		$('#cln').attr("src","img/clnder.png");
@@ -207,6 +208,7 @@
 	});
 	
 	$('#mndy').click(function (){
+		alert("hlo");
 		$('#wek_form').show();	
 		$("#add_remindr").hide();
 		$('#ck_calndr').hide();
@@ -259,7 +261,7 @@
 				for (var key in JSONObject) {
 					if (JSONObject.hasOwnProperty(key)) {
 					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
-						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
+						var ats = '<div class="ck_spn"> <div class="rmndr_name"> '+ JSONObject[key]["reminder_title"] +' </div> <div class="remndr_chk"> <input type="radio" value="'+ JSONObject[key]["reminder_title"] +' name="rmdr_frm" > </div> </div>';
 						//alert(ats);
 						$('.abt_chk').append(ats);
 					}
