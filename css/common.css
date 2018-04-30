@@ -844,11 +844,11 @@ input.rmd_task {
 }
 /**************************/
 .edir_rminmdr {
-    /*position: absolute;
+    position: absolute;
     bottom: 105px;
-    text-align: right;*/
+    text-align: right;
     float: right;
-    /*right: 170px;*/
+    right: 170px;
 }
 
 button#ed_it {
