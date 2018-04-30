@@ -144,7 +144,6 @@
 	});
 	
 	$('.remi_nder').click(function(){
-		alert('hlo');
 		$('#ims').attr("src", "img/home.png");
 		$('#inv').attr("src","img/invent.png");
 		$('#cln').attr("src","img/clnder.png");
@@ -208,7 +207,6 @@
 	});
 	
 	$('#mndy').click(function (){
-		alert("hlo");
 		$('#wek_form').show();	
 		$("#add_remindr").hide();
 		$('#ck_calndr').hide();
