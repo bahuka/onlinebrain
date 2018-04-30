@@ -546,6 +546,7 @@ div#loginbox {
 	background-size: 100% 100%;
 	background-position:0;
 	background-position-y: -40px;
+    background-repeat: no-repeat;
 }
 /*.sc_qust{
 	float:left;
@@ -577,7 +578,7 @@ div#loginbox {
 }
 .remndr_chk{
     float: left;
-    width: 25%;
+    /*width: 25%;*/
     margin-left: 2%;
 }
 /*.ck_spn {
