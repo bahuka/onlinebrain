@@ -173,6 +173,7 @@
 		$('#task_clndr').hide();
 		$("#my_daily").hide();
 	});
+	
 	$('.seting').click(function(){
 		$('#ims').attr("src", "img/home.png");
 		$('#inv').attr("src","img/invent.png");
@@ -258,7 +259,7 @@
 				for (var key in JSONObject) {
 					if (JSONObject.hasOwnProperty(key)) {
 					//alert(JSONObject[key]["name"] + ", " + JSONObject[key]["image"]);
-						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div> <input type="radio" value="'+ JSONObject[key]["reminder_title"] +'" name="mdyform" class="acsr" >  ';
+						var ats = '<div class="ck_spn">  '+ JSONObject[key]["reminder_title"] +' </div>';
 						//alert(ats);
 						$('.abt_chk').append(ats);
 					}
@@ -267,6 +268,14 @@
 		});
 		
 	});
+	
+	/*$('.acsr').click( function (){
+		alert('hlo');
+		var ac = $(this).val();
+		alert(ac);
+	
+	});*/
+	
 	$('i.fa.fa-plus-circle.mndys').click(function (){
 		$("#wek_form").hide();
 		$("#add_remindr").show();
